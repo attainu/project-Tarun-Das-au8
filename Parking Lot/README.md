@@ -1,4 +1,5 @@
-Parking Lot : Design a parking lot using Python
+##**Parking Lot**
+*Design a parking lot using Python 
 
-Description :
+**Description**
 
