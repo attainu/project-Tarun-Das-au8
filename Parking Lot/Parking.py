@@ -1,6 +1,9 @@
-import Parking1
+class Vehicle:
+	def __init__(self,regno,color):
+		self.color =  color
+		self.regno = regno
 
-class Parking:
+class Parking(Vehicle):
 	def __init__(self):
 		self.capacity = 0
 		self.slotId = 0
@@ -19,7 +22,7 @@ class Parking:
 	def park(self,regno,color):
 		if self.occupiedSlots < self.capacity: 
 			slotId = self.empty()
-			self.slots[slotId] = Parking1.Car(regno,color)
+			self.slots[slotId] = Vehicle(regno,color)
 			self.slotId += 1
 			self.occupiedSlots += 1
 			return slotId + 1
@@ -27,12 +30,12 @@ class Parking:
 			return -1
 
 	def status(self):
-		print("Slot No \t Regd No \t Colour")
+		print("Slot No \t Regd No \t\t Colour")
 		for i in range(len(self.slots)):
 			if self.slots[i] != -1:
 				print(str(i+1) + "\t\t" +str(self.slots[i].regno) + "\t\t" + str(self.slots[i].color))
 			else:
-				print("No Vehicle")
+				print(str(i+1) + "\t\t" + "slot is free now ")
 
 	def leave(self,slotId):
 
